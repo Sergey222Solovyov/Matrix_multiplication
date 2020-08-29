@@ -2,7 +2,7 @@
 #include <conio.h>
 #include <cstdlib>
 #include <ctime>
-
+//Checking invalid user input
 int getValue()
 {
 	while (true) // The loop continues until the user enters the correct value
