@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <conio.h>
-#include <cstdlib>
-#include <ctime>
+
+
 //Checking invalid user input
 int getValue()
 {
@@ -75,8 +75,9 @@ int main(int argc, char** argv)
 	{
 		for (int j(0); j < M2; j++)
 		{
+			
 			cout << "Enter the value in the [" << i << "] row of the [" << j << "] column for the first matrix.\n";
-			arr[i][j] = getValue();
+			
 			for (int i(0); i < M1; i++)
 			{
 				for (int j(0); j < M2; j++)
@@ -85,8 +86,7 @@ int main(int argc, char** argv)
 				}
 				cout << endl;
 			}
-			cout << "Press any key to continue...";
-			_getch();
+			arr[i][j] = getValue();
 			system("cls");
 		}
 	}
@@ -112,7 +112,7 @@ int main(int argc, char** argv)
 		for (int j(0); j < S2; j++)
 		{
 			cout << "Enter the value in the [" << i << "] row of the [" << j << "] column for the second matrix.\n";
-			brr[i][j] = getValue();
+			
 			for (int i(0); i < S1; i++)
 			{
 				for (int j(0); j < S2; j++)
@@ -121,8 +121,7 @@ int main(int argc, char** argv)
 				}
 				cout << endl;
 			}
-			cout << "Press any key to continue...";
-			_getch();
+			brr[i][j] = getValue();
 			system("cls");
 		}
 	}
@@ -143,9 +142,34 @@ int main(int argc, char** argv)
 			crr[i][j] = 0;
 		}
 	}
+	for (int i(0); i < M1; i++)
+	{
+		for (int j(0); j < M2; j++)
+		{
+			cout << "[" << arr[i][j] << "]" << " ";
+		}
+		cout << endl;
+	}
+
+
+	cout << "*";
+	cout << endl;
+
+	for (int i(0); i < S1; i++)
+	{
+		for (int j(0); j < S2; j++)
+		{
+			cout << "[" << brr[i][j] << "]" << " ";
+		}
+		cout << endl;
+	}
+
+	
+	cout << "=";
+	cout << endl;
 
 	//Matrix multiplication
-	cout << "Result: " << "\n";
+
 	for (int i(0); i < M1; i++)
 	{
 		for (int j(0); j < S2; j++)
@@ -158,6 +182,9 @@ int main(int argc, char** argv)
 		}
 		cout << endl;
 	}
+
+
+
 	
 	// Deleting matrix
 	for (int i(0); i < M1; i++)
